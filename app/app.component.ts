@@ -7,8 +7,13 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: 'my-app',
-  template: `<h1>{{ title }}</h1>`
+  template: `
+  <header>
+    <img src="img/angular.svg" alt="logo">
+    <h1>{{ title }}</h1>
+  </header>
+`
 })
 export class AppComponent {
-  title: 'Angular 2 TODO'
+  title = 'Angular 2 TODO'
 }
