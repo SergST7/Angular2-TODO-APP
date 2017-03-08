@@ -6,13 +6,10 @@
 import { Component } from "@angular/core";
 
 @Component({
+  moduleId: module.id,
   selector: 'my-app',
-  template: `
-  <header>
-    <img src="img/angular.svg" alt="logo">
-    <h1>{{ title }}</h1>
-  </header>
-`
+  templateUrl: "app.component.html",
+  styleUrls: ['app.component.css']
 })
 export class AppComponent {
   title = 'Angular 2 TODO'
