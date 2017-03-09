@@ -21,7 +21,14 @@ export class AppComponent {
   title = 'Angular 2 TODO';
   todos = todos;
 
-  toggle(todo){
+  toggle(todo: any){
     todo.completed = !todo.completed
+  }
+
+  delete(todo: any){
+    let index = this.todos.indexOf(todo);
+    if (index != -1) {
+      this.todos.splice(index, 1)
+    }
   }
 }
