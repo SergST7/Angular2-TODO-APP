@@ -109,3 +109,7 @@ button.icon .material-icons {
 .todo-item .checkbox {
     margin-right: .25em;
 }
+
+.todo-item:not(:first-child) {
+    border-top: 1px solid rgba(0,0,0,.1);
+}

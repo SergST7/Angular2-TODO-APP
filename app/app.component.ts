@@ -5,6 +5,12 @@
 
 import { Component } from "@angular/core";
 
+const todos = [
+  'Learn HTML',
+  'Learn JS',
+  'Learn Angular 2'
+];
+
 @Component({
   moduleId: module.id,
   selector: 'my-app',
@@ -12,5 +18,6 @@ import { Component } from "@angular/core";
   styleUrls: ['app.component.css']
 })
 export class AppComponent {
-  title = 'Angular 2 TODO'
+  title = 'Angular 2 TODO';
+  todos = todos
 }

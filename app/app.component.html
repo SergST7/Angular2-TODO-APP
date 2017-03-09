@@ -4,12 +4,12 @@
 </header>
 
 <main>
-	<section class="todo-list">
-		<div class="todo-item">
+	<section class="todo-list" *ngIf="todos.length">
+		<div class="todo-item" *ngFor="let todo of todos">
 			<button class="checkbox icon">
 				<i class="material-icons">check_box_outline_blank</i>
 			</button>
-			<span class="title"> Learn Angular 2 </span>
+			<span class="title">{{ todo }}</span>
 			<div class="actions">
 				<button class="delete icon">
 					<i class="material-icons">delete</i>
