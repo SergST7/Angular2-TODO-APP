@@ -4,6 +4,12 @@
 </header>
 
 <main>
+	<form class="todo-form" (submit)="createTask()">
+		<input placeholder="Task" type="text">
+		<button type="submit">Add Task</button>
+
+	</form>
+
 	<section class="todo-list" *ngIf="todos.length">
 		<!--<div class="todo-item" *ngFor="let todo of todos" [ngClass]="{completed: todo.completed}">-->
 		<div class="todo-item" *ngFor="let todo of todos" [class.completed]="todo.completed">
