@@ -6,9 +6,9 @@
 import { Component } from "@angular/core";
 
 const todos = [
-  'Learn HTML',
-  'Learn JS',
-  'Learn Angular 2'
+  {title: 'Learn HTML', completed: true},
+  {title: 'Learn JS', completed: false},
+  {title: 'Angular 2', completed: false}
 ];
 
 @Component({
