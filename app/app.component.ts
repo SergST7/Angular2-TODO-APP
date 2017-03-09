@@ -5,6 +5,11 @@
 
 import { Component } from "@angular/core";
 
+class Todo{
+  constructor(public title: string,
+              public completed: boolean = false){}
+}
+
 const todos = [
   {title: 'Learn HTML', completed: true},
   {title: 'Learn JS', completed: false},
@@ -30,5 +35,11 @@ export class AppComponent {
     if (index != -1) {
       this.todos.splice(index, 1)
     }
+  }
+
+  createTask(title: string){
+    let todo: Todo = new Todo(title);
+    this.todos.push(todo);
+    return false
   }
 }

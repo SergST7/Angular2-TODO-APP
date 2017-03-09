@@ -4,8 +4,8 @@
 </header>
 
 <main>
-	<form class="todo-form" (submit)="createTask()">
-		<input placeholder="Task" type="text">
+	<form class="todo-form" (submit)="createTask(titleInput.value); titleInput.value=''">
+		<input placeholder="Task" type="text" #titleInput>
 		<button type="submit">Add Task</button>
 
 	</form>
