@@ -4,8 +4,8 @@
 </header>
 
 <main>
-	<form class="todo-form" (submit)="createTask(titleInput.value); titleInput.value=''">
-		<input placeholder="Task" type="text" #titleInput>
+	<form class="todo-form" (ngSubmit)="createTask(); todoForm.reset()" #todoForm="ngForm">
+		<input placeholder="Task" type="text" name="title" [(ngModel)]="newTodoTitle" required>
 		<button type="submit">Add Task</button>
 
 	</form>

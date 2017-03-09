@@ -156,3 +156,17 @@ button.icon .material-icons {
 .todo-item.completed .material-icons {
     color: lightgray;
 }
+
+
+.todo-form input:focus.ng-invalid.ng-dirty {
+    border: 1px solid #dd0031;
+}
+
+.todo-form button {
+    margin-left: 16px;
+}
+
+.todo-item input {
+    flex: 1;
+    margin-right: 1rem;
+}

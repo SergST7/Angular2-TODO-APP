@@ -37,9 +37,9 @@ export class AppComponent {
     }
   }
 
-  createTask(title: string){
-    let todo: Todo = new Todo(title);
+  createTask(){
+    let todo: Todo = new Todo(this.newTodoTitle);
     this.todos.push(todo);
-    return false
+    this.newTodoTitle = "";
   }
 }
