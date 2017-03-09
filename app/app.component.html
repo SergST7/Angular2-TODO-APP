@@ -9,7 +9,8 @@
 			<button class="checkbox icon">
 				<!--<i *ngIf="!todo.completed" class="material-icons">check_box_outline_blank</i>-->
 				<!--<i *ngIf="todo.completed" class="material-icons">check_box</i>-->
-				<i  class="material-icons">{{ todo.completed ? 'check_box' : 'check_box_outline_blank' }}</i>
+				<!--<i  class="material-icons">{{ todo.completed ? 'check_box' : 'check_box_outline_blank' }}</i>-->
+				<i  class="material-icons" [innerText]="todo.completed ? 'check_box' : 'check_box_outline_blank'"></i>
 			</button>
 			<span class="title">{{ todo.title }}</span>
 			<div class="actions">
