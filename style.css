@@ -28,12 +28,6 @@ input {
     outline: none;
 }
 
-.todo-item {
-    padding: 1em;
-    display: flex;
-    align-items: center;
-}
-
 button {
     background: 0 0;
     border: none;
@@ -92,34 +86,6 @@ button.icon .material-icons {
     width: 24px;
     vertical-align: middle;
 }
-
-.todo-item .actions {
-    margin-left: auto;
-    opacity: 0;
-    transition: all .2s;
-}
-
-.todo-item:hover .actions {
-    opacity: 1;
-}
-
-.todo-item .checkbox {
-    margin-right: .25em;
-}
-
-.todo-item:not(:first-child) {
-    border-top: 1px solid rgba(0,0,0,.1);
-}
-
-.todo-item.completed .title {
-    text-decoration: line-through;
-}
-
-.todo-item.completed .title,
-.todo-item.completed .material-icons {
-    color: lightgray;
-}
-
 
 .todo-form input:focus.ng-invalid.ng-dirty {
     border: 1px solid #dd0031;
