@@ -5,17 +5,6 @@
 
 import { Component } from "@angular/core";
 
-class Todo{
-  constructor(public title: string,
-              public completed: boolean = false){}
-}
-
-const todos = [
-  {title: 'Learn HTML', completed: true},
-  {title: 'Learn JS', completed: false},
-  {title: 'Angular 2', completed: false}
-];
-
 @Component({
   moduleId: module.id,
   selector: 'my-app',
@@ -24,18 +13,4 @@ const todos = [
 })
 export class AppComponent {
   title = 'Angular 2 TODO';
-  todos = todos;
-
-
-  toggle(todo: any){
-    todo.completed = !todo.completed
-  }
-
-  delete(todo: any){
-    let index = this.todos.indexOf(todo);
-    if (index != -1) {
-      this.todos.splice(index, 1)
-    }
-  }
-
 }
