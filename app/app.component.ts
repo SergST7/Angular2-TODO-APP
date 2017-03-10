@@ -26,6 +26,7 @@ export class AppComponent {
   title = 'Angular 2 TODO';
   todos = todos;
 
+
   toggle(todo: any){
     todo.completed = !todo.completed
   }
@@ -37,9 +38,4 @@ export class AppComponent {
     }
   }
 
-  createTask(){
-    let todo: Todo = new Todo(this.newTodoTitle);
-    this.todos.push(todo);
-    this.newTodoTitle = "";
-  }
 }

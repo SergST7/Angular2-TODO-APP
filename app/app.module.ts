@@ -8,6 +8,7 @@ import {FormsModule} from "@angular/forms";
 
 //components
 import {AppComponent} from "./app.component";
+import {TodoFormComponent} from "./todo-form/todo-form.component";
 
 
 
@@ -16,7 +17,10 @@ import {AppComponent} from "./app.component";
     BrowserModule,
     FormsModule
   ],
-  declarations: [ AppComponent ],
+  declarations: [
+    AppComponent,
+    TodoFormComponent
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
