@@ -1,6 +1,6 @@
 <!--<div class="todo-item" *ngFor="let todo of todos" [ngClass]="{completed: todo.completed}">-->
 <div class="todo-item"[class.completed]="todo.completed">
-		<button class="checkbox icon" (click)="toggle(todo)">
+		<button class="checkbox icon" (click)="toggle()">
 			<!--<i *ngIf="!todo.completed" class="material-icons">check_box_outline_blank</i>-->
 			<!--<i *ngIf="todo.completed" class="material-icons">check_box</i>-->
 			<!--<i  class="material-icons">{{ todo.completed ? 'check_box' : 'check_box_outline_blank' }}</i>-->

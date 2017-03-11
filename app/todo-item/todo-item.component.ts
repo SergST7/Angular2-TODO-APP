@@ -2,7 +2,7 @@
  * Created by SergST on 10.03.2017.
  */
 
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
 import {Todo} from "../shared/todo";
 
 
@@ -13,5 +13,10 @@ import {Todo} from "../shared/todo";
   styleUrls: ['todo-item.component.css']
 })
 export class TodoItemComponent {
-  todo: Todo = new Todo('hhgfjhg');
+  @Input() todo: Todo;
+
+  toggle(){
+    this.todo.completed = !this.todo.completed
+  }
+
 }
