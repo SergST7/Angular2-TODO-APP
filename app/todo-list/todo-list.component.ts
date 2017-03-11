@@ -15,12 +15,10 @@ import {todos} from "../shared/data";
 export class TodoListComponent {
   todos: Todo[] = todos;
 
-
-  //
-  // delete(todo: any){
-  //   let index = this.todos.indexOf(todo);
-  //   if (index != -1) {
-  //     this.todos.splice(index, 1)
-  //   }
-  // }
+  delete(todo: Todo){
+    let index = this.todos.indexOf(todo);
+    if (index != -1) {
+      this.todos.splice(index, 1)
+    }
+  }
 }

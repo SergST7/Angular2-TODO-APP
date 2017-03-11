@@ -2,7 +2,7 @@
  * Created by SergST on 10.03.2017.
  */
 
-import {Component, Input} from "@angular/core";
+import {Component, Input, Output, EventEmitter} from "@angular/core";
 import {Todo} from "../shared/todo";
 
 
@@ -14,9 +14,14 @@ import {Todo} from "../shared/todo";
 })
 export class TodoItemComponent {
   @Input() todo: Todo;
+  @Output() deleteEvent = new EventEmitter();
 
   toggle(){
     this.todo.completed = !this.todo.completed
+  }
+
+  onDelete(){
+    this.deleteEvent.emit(this.todo)
   }
 
 }
