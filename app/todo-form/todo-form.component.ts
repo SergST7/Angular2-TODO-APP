@@ -2,7 +2,7 @@
  * Created by SergST on 10.03.2017.
  */
 
-import {Component} from "@angular/core";
+import {Component, Output, EventEmitter} from "@angular/core";
 
 @Component({
   moduleId: module.id,
@@ -12,10 +12,9 @@ import {Component} from "@angular/core";
 })
 export class TodoFormComponent {
   newTodoTitle: string;
+  @Output() addEvent = new EventEmitter();
 
   createTask(){
-    // let todo: Todo = new Todo(this.newTodoTitle);
-    // this.todos.push(todo);
-    // this.newTodoTitle = "";
+    this.addEvent.emit(this.newTodoTitle);
   }
 }

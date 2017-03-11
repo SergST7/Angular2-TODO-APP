@@ -2,9 +2,9 @@
  * Created by SergST on 10.03.2017.
  */
 
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
 import {Todo} from "../shared/todo";
-import {todos} from "../shared/data";
+
 
 @Component({
   moduleId: module.id,
@@ -13,7 +13,7 @@ import {todos} from "../shared/data";
   styleUrls: ['todo-list.component.css']
 })
 export class TodoListComponent {
-  todos: Todo[] = todos;
+  @Input() todos: Todo[];
 
   delete(todo: Todo){
     let index = this.todos.indexOf(todo);
