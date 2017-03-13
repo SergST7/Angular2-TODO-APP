@@ -14,7 +14,8 @@ import {TodoService} from "../shared/todo.service";
   styleUrls: ['todo-list.component.css']
 })
 export class TodoListComponent implements OnInit{
-  @Input() todos: Todo[];
+  // @Input()
+  todos: Todo[];
 
   constructor(private todoService: TodoService){
     this.todos = [];

@@ -4,8 +4,8 @@
 
 
 import { Component } from "@angular/core";
-import {Todo} from "./shared/todo";
-import {todos} from "./shared/data";
+// import {Todo} from "./shared/todo";
+// import {todos} from "./shared/data";
 
 @Component({
   moduleId: module.id,
@@ -15,10 +15,10 @@ import {todos} from "./shared/data";
 })
 export class AppComponent {
   title = 'Angular 2 TODO';
-  todos: Todo[] = todos;
+  // todos: Todo[] = todos;
 
-  create(todoTitle: string) {
-    const todo: Todo = new Todo(todoTitle);
-    this.todos.push(todo)
-  }
+  // create(todoTitle: string) {
+  //   const todo: Todo = new Todo(todoTitle);
+  //   this.todos.push(todo)
+  // }
 }
