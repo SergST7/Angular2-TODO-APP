@@ -16,13 +16,16 @@ import {TodoItemComponent} from "./todo-item/todo-item.component";
 import {TodoService} from "./shared/todo.service";
 import {HttpModule} from "@angular/http";
 
+import {InMemoryDataService} from "./shared/data.service";
+import {InMemoryWebApiModule} from "angular-in-memory-web-api";
 
 
 @NgModule ({
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   declarations: [
     AppComponent,
