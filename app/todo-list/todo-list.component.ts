@@ -28,4 +28,8 @@ export class TodoListComponent implements OnInit{
   delete(todo: Todo){
     this.todoService.deleteTodo(todo)
   }
+
+  toggle(todo: Todo){
+    this.todoService.toggleTodo(todo)
+  }
 }

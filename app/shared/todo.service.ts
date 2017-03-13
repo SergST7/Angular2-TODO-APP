@@ -19,4 +19,7 @@ export class TodoService{
     }
   }
 
+  toggleTodo(todo: Todo){
+    todo.completed = !todo.completed
+  }
 }
