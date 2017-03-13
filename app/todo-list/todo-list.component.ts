@@ -2,8 +2,9 @@
  * Created by SergST on 10.03.2017.
  */
 
-import {Component, Input} from "@angular/core";
+import {Component, Input, OnInit} from "@angular/core";
 import {Todo} from "../shared/todo";
+import {TodoService} from "../shared/todo.service";
 
 
 @Component({
@@ -12,8 +13,16 @@ import {Todo} from "../shared/todo";
   templateUrl: 'todo-list.component.html',
   styleUrls: ['todo-list.component.css']
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit{
   @Input() todos: Todo[];
+
+  constructor(private todoService: TodoService){
+    this.todos = [];
+  }
+
+  ngOnInit(){
+    this.todos = this.todoService.getTodos()
+  }
 
   delete(todo: Todo){
     let index = this.todos.indexOf(todo);
