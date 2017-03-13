@@ -4,9 +4,14 @@
 
 import {Todo} from "./todo";
 import {todos} from "./data";
+import {Http} from "@angular/http";
+import {Injectable} from "@angular/core";
 
+@Injectable()
 export class TodoService{
   todos: Todo[] = todos;
+
+  constructor(private http:Http){}
 
   getTodos():Todo[] {
     return this.todos

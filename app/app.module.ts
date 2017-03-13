@@ -14,13 +14,15 @@ import {TodoItemComponent} from "./todo-item/todo-item.component";
 
 //service
 import {TodoService} from "./shared/todo.service";
+import {HttpModule} from "@angular/http";
 
 
 
 @NgModule ({
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   declarations: [
     AppComponent,
