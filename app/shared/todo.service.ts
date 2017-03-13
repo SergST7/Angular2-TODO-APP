@@ -12,6 +12,10 @@ export class TodoService{
     return this.todos
   }
 
+  createTodo(title: string){
+    this.todos.push(new Todo(title))
+  }
+
   deleteTodo(todo: Todo){
     let index = this.todos.indexOf(todo);
     if (index != -1) {
