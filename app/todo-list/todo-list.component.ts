@@ -26,9 +26,6 @@ export class TodoListComponent implements OnInit{
   }
 
   delete(todo: Todo){
-    let index = this.todos.indexOf(todo);
-    if (index != -1) {
-      this.todos.splice(index, 1)
-    }
+    this.todoService.deleteTodo(todo)
   }
 }
