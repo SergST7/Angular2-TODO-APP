@@ -38,10 +38,20 @@ export class TodoService{
   }
 
   deleteTodo(todo: Todo){
-    let index = this.todos.indexOf(todo);
-    if (index != -1) {
-      this.todos.splice(index, 1)
-    }
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers });
+    let url = `${this.apiUrl}/${todo.id}`;
+
+    this.http
+      .delete(url, options)
+      .toPromise()
+      .then(res => {
+        let index = this.todos.indexOf(todo);
+        if (index != -1) {
+          this.todos.splice(index, 1)
+        }
+      })
+      .catch(this.handleError)
   }
 
   toggleTodo(todo: Todo){
