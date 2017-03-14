@@ -45,7 +45,7 @@ export class TodoService{
     this.http
       .delete(url, options)
       .toPromise()
-      .then(res => {
+      .then(() => {
         let index = this.todos.indexOf(todo);
         if (index != -1) {
           this.todos.splice(index, 1)
@@ -55,10 +55,18 @@ export class TodoService{
   }
 
   toggleTodo(todo: Todo){
-    todo.completed = !todo.completed
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers });
+    let url = `${this.apiUrl}/${todo.id}`;
+
+    this.http
+      .put(url, todo, options)
+      .toPromise()
+      .then(() => todo.completed = !todo.completed)
+      .catch(this.handleError)
   }
 
-  handleError(err:any){
+   handleError(err:any){
     console.error('Error', err);
     return Promise.reject(err.message || err)
   }
