@@ -14,7 +14,7 @@ import {TodoService} from "../shared/todo.service";
   styleUrls: ['todo-list.component.css']
 })
 export class TodoListComponent implements OnInit{
-  // @Input()
+
   todos: Todo[];
 
   constructor(private todoService: TodoService){
@@ -22,7 +22,7 @@ export class TodoListComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.todos = this.todoService.getTodos()
+    this.todoService.getTodos().then(res => this.todos=res)
   }
 
   delete(todo: Todo){
