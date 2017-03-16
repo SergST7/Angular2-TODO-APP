@@ -22,6 +22,10 @@ export class TodosComponent implements OnInit{
     this.todoService.getTodos().subscribe(res => this.todos=res)
   }
 
+  create(title: string){
+    this.todoService.createTodo(title).subscribe(todo => this.todos.push(todo))
+  }
+
   delete(todo: Todo){
     this.todoService.deleteTodo(todo).subscribe(() => {
       let index = this.todos.indexOf(todo);

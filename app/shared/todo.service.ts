@@ -50,7 +50,7 @@ export class TodoService{
     let options = new RequestOptions({ headers });
     let url = `${this.apiUrl}/${todo.id}`;
 
-    this.http
+    return this.http
       .put(url, todo, options)
       .catch(this.handleError)
   }

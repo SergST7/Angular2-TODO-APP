@@ -2,9 +2,8 @@
  * Created by SergST on 10.03.2017.
  */
 
-import {Component,  OnInit} from "@angular/core";
+import {Component, Input, OnInit} from "@angular/core";
 import {Todo} from "../../shared/todo";
-import {TodoService} from "../../shared/todo.service";
 
 
 
@@ -16,11 +15,9 @@ import {TodoService} from "../../shared/todo.service";
 })
 export class TodoListComponent implements OnInit{
 
-  todos: Todo[];
+  @Input() todos: Todo[];
 
-  constructor(private todoService: TodoService){
-    this.todos = [];
-  }
+  constructor(){}
 
   ngOnInit(){
     // this.todoService.getTodos().subscribe(res => this.todos=res)
