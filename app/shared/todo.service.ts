@@ -36,6 +36,7 @@ export class TodoService{
       .map(res => res.json().data)
       .map(todo => this.todos.push(todo))
       .catch(this.handleError)
+      .subscribe()
   }
 
   deleteTodo(todo: Todo){
@@ -52,6 +53,7 @@ export class TodoService{
         }
       })
       .catch(this.handleError)
+      .subscribe()
   }
 
   toggleTodo(todo: Todo){
@@ -63,6 +65,7 @@ export class TodoService{
       .put(url, todo, options)
       .map(() => todo.completed = !todo.completed)
       .catch(this.handleError)
+      .subscribe()
   }
 
    handleError(err:any){
