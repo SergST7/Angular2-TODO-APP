@@ -23,14 +23,14 @@ export class TodoListComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.todoService.getTodos().subscribe(res => this.todos=res)
+    // this.todoService.getTodos().subscribe(res => this.todos=res)
   }
 
-  delete(todo: Todo){
-    this.todoService.deleteTodo(todo)
-  }
+  // delete(todo: Todo){
+  //   this.todoService.deleteTodo(todo)
+  // }
 
-  toggle(todo: Todo){
-    this.todoService.toggleTodo(todo)
-  }
+  // toggle(todo: Todo){
+  //   this.todoService.toggleTodo(todo)
+  // }
 }

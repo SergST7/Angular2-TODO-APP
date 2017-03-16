@@ -12,7 +12,7 @@ import 'rxjs/observable/throw'
 
 @Injectable()
 export class TodoService{
-  todos: Todo[] = [];
+
   private apiUrl = 'api/todos';
 
   constructor(private http:Http){}
@@ -21,9 +21,7 @@ export class TodoService{
     return this.http
       .get(this.apiUrl)
       .map(res => res.json().data)
-      .map(res => this.todos = res)
       .catch(this.handleError)
-
   }
 
   createTodo(title: string){
@@ -31,12 +29,10 @@ export class TodoService{
     let options = new RequestOptions({ headers });
     let todo = new Todo(title);
 
-    this.http
+    return this.http
       .post(this.apiUrl, todo, options)
       .map(res => res.json().data)
-      .map(todo => this.todos.push(todo))
       .catch(this.handleError)
-      .subscribe()
   }
 
   deleteTodo(todo: Todo){
@@ -44,16 +40,9 @@ export class TodoService{
     let options = new RequestOptions({ headers });
     let url = `${this.apiUrl}/${todo.id}`;
 
-    this.http
+    return this.http
       .delete(url, options)
-      .map(() => {
-        let index = this.todos.indexOf(todo);
-        if (index != -1) {
-          this.todos.splice(index, 1)
-        }
-      })
       .catch(this.handleError)
-      .subscribe()
   }
 
   toggleTodo(todo: Todo){
@@ -63,9 +52,7 @@ export class TodoService{
 
     this.http
       .put(url, todo, options)
-      .map(() => todo.completed = !todo.completed)
       .catch(this.handleError)
-      .subscribe()
   }
 
    handleError(err:any){
