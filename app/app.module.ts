@@ -9,8 +9,9 @@ import {FormsModule} from "@angular/forms";
 //components
 import {AppComponent} from "./app.component";
 import {TodoFormComponent} from "./todo-form/todo-form.component";
-import {TodoListComponent} from "./todo-list/todo-list.component";
-import {TodoItemComponent} from "./todo-item/todo-item.component";
+import {TodoListComponent} from "./todos/todo-list/todo-list.component";
+import {TodoItemComponent} from "./todos/todo-item/todo-item.component";
+import {TodosComponent} from "./todos/todos.component";
 
 //service
 import {TodoService} from "./shared/todo.service";
@@ -29,6 +30,7 @@ import {InMemoryWebApiModule} from "angular-in-memory-web-api";
   ],
   declarations: [
     AppComponent,
+    TodosComponent,
     TodoFormComponent,
     TodoListComponent,
     TodoItemComponent
