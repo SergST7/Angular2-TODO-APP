@@ -1,2 +1,2 @@
 <todo-form (addEvent)="create($event)"></todo-form>
-<todo-list [todos]="todos"></todo-list>
+<todo-list [todos]="todos" (delete)="delete($event)" (toggle)="toggle($event)"></todo-list>

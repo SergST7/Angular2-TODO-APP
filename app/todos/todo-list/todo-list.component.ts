@@ -2,7 +2,7 @@
  * Created by SergST on 10.03.2017.
  */
 
-import {Component, Input, OnInit} from "@angular/core";
+import {Component, Input, OnInit, Output, EventEmitter} from "@angular/core";
 import {Todo} from "../../shared/todo";
 
 
@@ -16,6 +16,8 @@ import {Todo} from "../../shared/todo";
 export class TodoListComponent implements OnInit{
 
   @Input() todos: Todo[];
+  @Output() delete: EventEmitter<Todo> = new EventEmitter();
+  @Output() toggle: EventEmitter<Todo> = new EventEmitter();
 
   constructor(){}
 
@@ -23,11 +25,11 @@ export class TodoListComponent implements OnInit{
     // this.todoService.getTodos().subscribe(res => this.todos=res)
   }
 
-  // delete(todo: Todo){
-  //   this.todoService.deleteTodo(todo)
-  // }
+  onDelete(todo: Todo){
+    this.delete.emit(todo)
+  }
 
-  // toggle(todo: Todo){
-  //   this.todoService.toggleTodo(todo)
-  // }
+  onToggle(todo: Todo){
+    this.toggle.emit(todo)
+  }
 }
