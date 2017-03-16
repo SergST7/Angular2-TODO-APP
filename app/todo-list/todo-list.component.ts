@@ -2,9 +2,10 @@
  * Created by SergST on 10.03.2017.
  */
 
-import {Component, Input, OnInit} from "@angular/core";
+import {Component,  OnInit} from "@angular/core";
 import {Todo} from "../shared/todo";
 import {TodoService} from "../shared/todo.service";
+
 
 
 @Component({
@@ -22,7 +23,7 @@ export class TodoListComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.todoService.getTodos().then(res => this.todos=res)
+    this.todoService.getTodos().subscribe(res => this.todos=res)
   }
 
   delete(todo: Todo){
