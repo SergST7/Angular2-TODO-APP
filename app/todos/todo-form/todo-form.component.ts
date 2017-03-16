@@ -2,8 +2,8 @@
  * Created by SergST on 10.03.2017.
  */
 
-import {Component} from "@angular/core";
-import {TodoService} from "../../shared/todo.service";
+import {Component, Output, EventEmitter} from "@angular/core";
+
 
 @Component({
   moduleId: module.id,
@@ -13,10 +13,11 @@ import {TodoService} from "../../shared/todo.service";
 })
 export class TodoFormComponent {
   newTodoTitle: string;
+  @Output() addEvent: EventEmitter<string> = new EventEmitter();
 
-  constructor(private todoSrv: TodoService){};
+  constructor(){};
 
   createTask(){
-    this.todoSrv.createTodo(this.newTodoTitle)
+    this.addEvent.emit(this.newTodoTitle)
   }
 }
